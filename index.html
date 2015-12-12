@@ -1,9 +1,150 @@
 <html>
 <head>
     <title>SimpleSudoku</title>
+    <style>
+        body {
+            width: 100%;
+        }
+
+        .container {
+            width: 720px;
+            text-align: center;
+            margin: auto;
+        }
+
+        #pattern-container {
+            padding: 30px;
+        }
+
+        #pattern-container input {
+            width: 60%;
+            height: 32px;
+            font-size: 18px;
+        }
+
+        .row {
+            width: 500px;
+            margin: auto;
+        }
+
+        .row input {
+            width: 50px;
+            height: 50px;
+            font-size: 42px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
+<div class="container">
+    <h1>Sudoku Solver</h1>
+    <div id="pattern-container">
+        <label>Enter sudoku grid: <input type="text" name="grid"/></label>
+    </div>
+
+    <div class="grid">
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+        <div class="row">
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="sudoku.js"></script>
 </body>

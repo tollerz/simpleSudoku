@@ -222,13 +222,5 @@ describe("Sudoku", function() {
                 expect(sudoku.getCellPossibleSolutions(62)).toEqual('4');
             });
         });
-
-        describe("Test solutions Hard", function() {
-
-            it("solve hard sudoku", function() {
-                sudoku.setGrid(solve2);
-                sudoku.easyRun();
-            });
-        });
     });
 });
