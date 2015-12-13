@@ -281,7 +281,7 @@ var sudoku = (function (grid) {
 
             var t1 = performance.now()
 
-            timer = 'Execution time: ' + (t1 - t0) + ' milliseconds';
+            timer = 'Execution time: ' + (t1 - t0).toFixed(2) + ' milliseconds';
         },
     };
 })();
