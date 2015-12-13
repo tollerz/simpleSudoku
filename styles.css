@@ -1,0 +1,76 @@
+body {
+    width: 100%;
+    font-family: 'arvo';
+}
+
+h1 {
+    padding-top: 30px;
+}
+
+button {
+    cursor: pointer;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    padding: 6px 20px;
+    background:#888; 
+    border:1px solid #777;
+    color: #fff;
+}
+
+button:hover {
+    background:#777; 
+    border:1px solid #777;
+}
+
+label.label-vertical {
+    padding: 3px;
+}
+
+.label-vertical {
+    display: block;
+}
+
+.container {
+    width: 720px;
+    text-align: center;
+    margin: auto;
+}
+
+#pattern-container {
+    padding: 10px;
+}
+
+#pattern-container input {
+    width: 60%;
+    height: 32px;
+    font-size: 18px;
+    margin:auto;
+}
+
+.grid {
+    margin-bottom: 10px;
+}
+
+.puzzle-grid {
+    margin: auto;
+    margin-bottom: 5px;
+    border-collapse: collapse;
+}
+
+.row {
+    width: 500px;
+    margin: auto;
+}
+
+.row input {
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.muted {
+    color: #666;
+    font-size: 0.8em;
+}
