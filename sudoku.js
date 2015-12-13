@@ -188,7 +188,17 @@ var sudoku = (function (grid) {
         },
 
         setGrid: function(newGrid) {
-            grid = newGrid;
+            grid = this.normalise(newGrid);
+        },
+
+        normalise: function(pattern) {
+            if (typeof pattern === 'string') {
+                return(pattern.split(','));
+            }
+            
+            if (Array.isArray(pattern)) {
+                return pattern;
+            }
         },
 
         // Get the row 1-9 (top to bottom) from the sudoku square.
@@ -258,15 +268,13 @@ var sudoku = (function (grid) {
 
         easyRun: function() {
             var t0 = performance.now()
-            // var start = new Date().getTime();
             
             this.easySolveGrid();
 
-            prettyPrint();
+            // prettyPrint();
 
             var t1 = performance.now()
-            // var end = new Date().getTime(),
-            //     time = end - start;
+
             console.log('Execution time: ' + (t1 - t0) + ' milliseconds');
         },
     };
