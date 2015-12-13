@@ -2,6 +2,8 @@ var sudoku = (function (grid) {
     var grid      = grid,
 
         possible  = ['1', '2', '3', '4', '5', '6', '7', '8', '9' ],
+
+        timer     = '';
         
         row1      = [0, 8],
         row2      = [9, 17],
@@ -201,6 +203,10 @@ var sudoku = (function (grid) {
             }
         },
 
+        getCompletionTime: function() {
+            return timer;
+        },
+
         // Get the row 1-9 (top to bottom) from the sudoku square.
         getRow: function(row) {
             return rowValues(row);
@@ -275,7 +281,7 @@ var sudoku = (function (grid) {
 
             var t1 = performance.now()
 
-            console.log('Execution time: ' + (t1 - t0) + ' milliseconds');
+            timer = 'Execution time: ' + (t1 - t0) + ' milliseconds';
         },
     };
 })();

@@ -1,9 +1,41 @@
 <html>
 <head>
     <title>SimpleSudoku</title>
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
+  
     <style>
         body {
             width: 100%;
+            font-family: 'arvo';
+        }
+
+        h1 {
+            padding-top: 30px;
+        }
+
+        button {
+            cursor: pointer;
+            -moz-border-radius:28px;
+            -webkit-border-radius:28px;
+            border-radius:28px;
+            padding: 6px 20px;
+            background:#888; /*the colour of the button*/
+            border:1px solid #777;
+            color: #fff;
+        }
+
+        button:hover {
+            background:#777; /*the colour of the button*/
+            border:1px solid #777;
+        }
+
+        label.label-vertical {
+            padding: 3px;
+        }
+
+        .label-vertical {
+            display: block;
         }
 
         .container {
@@ -13,13 +45,24 @@
         }
 
         #pattern-container {
-            padding: 30px;
+            padding: 10px;
         }
 
         #pattern-container input {
             width: 60%;
             height: 32px;
             font-size: 18px;
+            margin:auto;
+        }
+
+        .grid {
+            margin-bottom: 10px;
+        }
+
+        .puzzle-grid {
+            margin: auto;
+            margin-bottom: 5px;
+            border-collapse: collapse;
         }
 
         .row {
@@ -28,10 +71,15 @@
         }
 
         .row input {
-            width: 50px;
-            height: 50px;
-            font-size: 42px;
+            width: 40px;
+            height: 40px;
+            font-size: 32px;
             text-align: center;
+        }
+
+        .muted {
+            color: #666;
+            font-size: 0.8em;
         }
     </style>
 </head>
@@ -39,114 +87,123 @@
 
 <div class="container">
     <h1>Sudoku Solver</h1>
-    <div id="pattern-container">
-        <label>Enter sudoku grid: <input type="text" id="pattern" name="grid"/></label>
-        <p>E.g: <b>5,3,,,7,,,,,6,,,1,9,5,,,,,9,8,,,,,6,,8,,,,6,,,,3,4,,,8,,3,,,1,7,,,,2,,,,6,,6,,,,,2,8,,,,,4,1,9,,,5,,,,,8,,,7,9</b></p>
-        <button type="button" id="solvePattern">Solve</button>
-    </div>
 
     <div class="grid">
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-        <div class="row">
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-            <input class="cell" type="text"></input>
-        </div>
-
+        <table class="puzzle-grid">
+            <tbody>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                    <td class="cell"><input class="answer-cell" type="text" maxLength="1"></input></td>
+                </tr>
+            </tbody>
+        </table>
+        
         <button type="button" id="solveGrid">Solve</button>
+        <button type="button" id="clearGrid">Clear</button>
+    </div>
+
+    <div id="pattern-container">
+        <label class="label-vertical">Enter Sudoku grid pattern: </label>
+        <input type="text" id="pattern" class="label-vertical" name="grid"/>
+
+        <p class="muted"><i>e.g. 5,3,,,7,,,,,6,,,1,9,5,,,,,9,8,,,,,6,,8,,,,6,,,,3,4,,,8,,3,,,1,7,,,,2,,,,6,,6,,,,,2,8,,,,,4,1,9,,,5,,,,,8,,,7,9</i></p>
+        <button type="button" id="solvePattern">Solve</button>
+        <p class="timer"></p>
     </div>
 </div>
 
@@ -154,11 +211,48 @@
 
 <script type="text/javascript">
 
-    document.querySelector("#solvePattern")
+    document.querySelector('#solvePattern')
             .addEventListener('click', function() { 
                 solve(document.querySelector('#pattern').value)
             }, false);
 
+    document.querySelector('#solveGrid')
+            .addEventListener('click', function() {
+                solveFromGrid()
+            }, false);
+
+    document.querySelector('#clearGrid')
+            .addEventListener('click', function() {
+                clearGrid()
+            }, false);
+
+    function clearGrid() {
+        var inputs = document.querySelectorAll('.answer-cell');
+
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = '';
+        }
+    };
+
+    function populateGrid() {
+        var grid = sudoku.getGrid();
+        var cells = document.querySelectorAll('.answer-cell');
+
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].value = grid[i] || '';
+        }
+    };
+
+    function solveFromGrid() {
+        var inputs = document.querySelectorAll('.answer-cell');
+        var pattern = [];
+
+        for (var i = 0; i < inputs.length; i++) {
+            pattern.push(inputs[i].value);
+        }
+
+        solve(pattern);
+    };
 
     function solve(pattern) {
         sudoku.setGrid(pattern);
@@ -166,16 +260,12 @@
         sudoku.easyRun();
         
         populateGrid();
-    }
 
-    function populateGrid() {
-        var grid = sudoku.getGrid();
-        var cells = document.querySelectorAll('.cell');
+        console.log(sudoku.getCompletionTime());
+        document.querySelector('.timer').innerHTML = sudoku.getCompletionTime();
+    };
 
-        for (var i = 0; i < cells.length; i++) {
-            cells[i].value = grid[i] || '';
-        }
-    }
+
 </script>
 
 </body>
