@@ -273,16 +273,21 @@ var sudoku = (function (grid) {
         },
 
         easyRun: function() {
-            var t0 = performance.now()
+            var t0 = Date.now()
             
             this.easySolveGrid();
 
             // prettyPrint();
 
-            var t1 = performance.now()
+            var t1 = Date.now()
 
-            timer = 'Execution time: ' + (t1 - t0).toFixed(2) + ' milliseconds';
+            timer = 'Execution time: ' + (t1 - t0) + ' milliseconds';
         },
     };
 })();
-    
+
+//Export node module.
+if ( typeof module !== 'undefined' && module.hasOwnProperty('exports') )
+{
+    module.exports = sudoku;
+} 
