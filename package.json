@@ -1,0 +1,25 @@
+{
+  "name": "sudoku",
+  "version": "1.0.0",
+  "description": "solve sudoku puzzles",
+  "main": "sudoku.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tollerz/simpleSudoku.git"
+  },
+  "keywords": [
+    "sudoku"
+  ],
+  "author": "Robert Toller",
+  "license": "(MIT)",
+  "bugs": {
+    "url": "https://github.com/tollerz/simpleSudoku/issues"
+  },
+  "homepage": "https://github.com/tollerz/simpleSudoku",
+  "devDependencies": {
+    "gulp-jasmine": "^2.2.1"
+  }
+}
