@@ -5,4 +5,5 @@ The current implementation will handles the 'Easy' level puzzles, some further i
 
 Have a go at <a href="https://tollerz.github.io/simpleSudoku">https://tollerz.github.io/simpleSudoku </a>
 
-Tests have been included using Jasmine as a practice Exercise. I've found it much easier to manage the state of the grid with these, and will be looking at ways to make them more robust (with different patterns tested against)
+Run the tests with
+<pre>npm test</pre>
