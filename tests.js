@@ -190,4 +190,12 @@ describe("Sudoku", function() {
             });
         });
     });
+
+    describe("ALL POSSIBLE VALUES REMAINS UP TO DATE", function() {
+
+        it("possible values data object updated when possible values fetched", function() {
+            expect(sudoku.setPossibleSolutions(1, [1,2,3])).toEqual({1: [1,2,3]});
+        });
+
+    });
 });
