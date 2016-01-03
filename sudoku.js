@@ -1,7 +1,7 @@
 var sudoku = (function (grid) {
     var grid      = grid,
 
-        possible  = ['1', '2', '3', '4', '5', '6', '7', '8', '9' ],
+        possible  = [1, 2, 3, 4, 5, 6, 7, 8, 9],
 
         timer     = '';
         
@@ -74,10 +74,6 @@ var sudoku = (function (grid) {
         return remaining;
     };
 
-    getCurrentNumbers = function(set) {
-
-    }
-
     // Get the row by the cells index.
     getRowIndexByGridIndex = function(index) {
         for (i in rows) {
@@ -127,6 +123,7 @@ var sudoku = (function (grid) {
                 count = 1;
             }
         }
+
         return values;
     };
 
@@ -195,7 +192,7 @@ var sudoku = (function (grid) {
 
         normalise: function(pattern) {
             if (typeof pattern === 'string') {
-                return(pattern.split(','));
+                return(pattern.split(',').map(Number));
             }
             
             if (Array.isArray(pattern)) {
@@ -228,7 +225,7 @@ var sudoku = (function (grid) {
         },
 
         getCellPossibleSolutions: function(cell) {
-            if (grid[cell] !== '') {
+            if (grid[cell] !== 0) {
                 return grid[cell];
             }
             else {
